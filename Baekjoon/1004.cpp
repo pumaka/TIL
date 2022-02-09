@@ -22,18 +22,25 @@ int main(){
   cin >> x1 >> y1 >> x2 >> y2;
   for(int i = 0; i < T; i++){
     cin >> N;
-    for(int l = 0; l < N; l++){
+    cout << "\nN excepted! : " << N << "\n";
+    for(int l = 0; l < N;l++){
       cin >> c1 >> c2 >> r;
+      cout << c1 << c2 << r << "\n";
       if(length(x1,y1,c1,c2,r) && (length(x2,y2,c1,c2,r) == 0)){
         count += 1;
       }
       else if((length(x1,y1,c1,c2,r) == 0) && length(x2,y2,c1,c2,r)){
         count += 1;
       }
-      else {}
+      else{}
+      cout << "L: " << l << "\n";
     }
-    cout << count;
+    cout << "count: " << count << "\n";
     count = 0;
   }
+  cout << "T: " << T <<"\n";
+  cout << "N: " << N << "\n";
+  cout << x1 << " " << y1 << " " << x2 << " " << y2 << "\n";
+  cout << c1 << " " << c2 << " " << r << "\n";
   return 0;
 }
