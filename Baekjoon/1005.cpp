@@ -1,6 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
+#include <queue>
 
 int main(){
     int T, N, K, time;

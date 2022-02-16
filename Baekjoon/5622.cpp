@@ -13,7 +13,7 @@ int main(){
         if(int(A) >= int('S')){
             A -= 1;
         }
-        if(A == 'Z'){
+        if(A == 'Y'){
             A -= 1;
         }
         cout << int(A)-65 << " " << A << "\n";
