@@ -10,7 +10,7 @@ int main() {
         cout << -1;
     }
     else{
-        count = A/(C-B);
+        count = (A/(C-B))+1;
         cout << count;
     }
     return 0;
