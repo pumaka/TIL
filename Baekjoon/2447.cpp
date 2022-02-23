@@ -1,5 +1,5 @@
 #include<stdio.h>
-int st[7000][7000]={0};
+int st[1000][1000]={0};
 void star(int x,int y,int n)
 {
 	if(n==1)
