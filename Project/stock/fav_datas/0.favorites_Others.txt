@@ -1,0 +1,5 @@
+GOOG
+AAPL
+FB
+AMZN
+COP

@@ -1,0 +1,2 @@
+Date	High	Low	Open	Close	Volume	Adj Close
+2021-02-15	2280	2215	2215	2260	126445	2260
