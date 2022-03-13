@@ -1,0 +1,3 @@
+They are basically the same.
+
+However, struct is public by default and class is private by default
