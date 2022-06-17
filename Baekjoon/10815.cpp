@@ -1,37 +1,25 @@
 #include <cstdio>
+#include <map>
 
-
-int main(){
-    int N, M;
+int main() {
+    int N, M, A;
     scanf("%d", &N);
-    int SG[N]={0};
-    int min = 10000000, max = -100000000;
-    // INPUT
+    std::map<int , int> m;
     for(int i = 0; i < N; i++){
-        scanf("%d", &SG[i]);
+        scanf("%d", &A);
+        m[A] = 1;
     }
+
     scanf("%d", &M);
-    int CD[M]= {0};
     for(int i = 0; i < M; i++){
-        scanf("%d", &CD[i]);
-        if(CD[i] > max){
-            max = CD[i];
+        scanf("%d", &A);
+        if(m.find(A) == m.end()){
+            printf("0 ");
         }
-        if(CD[i] < min){
-            min = CD[i];
+        else{
+            printf("1 ");
         }
-    }
-
-    int rang[max - min + 1]={0};
-    for(int &i : SG ){
-        rang[i-min] = 1; 
-    }
-
-    for(int &i : CD ){
-        printf("%d ",rang[i-min]);
     }
     printf("\n");
-    
     return 0;
 }
-
