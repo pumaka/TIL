@@ -1,3 +1,5 @@
+// ref https://velog.io/@xx0hn/BOJ-C-2477%EB%B2%88-%EC%B0%B8%EC%99%B8%EB%B0%AD
+
 #include <iostream>
 #include <vector>
 using namespace std;
