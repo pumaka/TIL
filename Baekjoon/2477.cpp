@@ -1,30 +1,35 @@
 #include <iostream>
+#include <vector>
+using namespace std;
 
-int main() {
-    int mps;
-    std::cin >> mps;
-    int max_h = 0, max_w = 0, min_h = 500, min_w = 500;
-    int direction = 0, num = 0;
-    for(int i = 0 ; i < 6; i++){
-        std::cin >> direction >> num;
-        if(direction == 3 || direction == 4){
-            if(num > max_h){
-                max_h = num;
-            }
-            if(num < min_h){
-                min_h = num;
-            }
-        }
-        else{
-            if(num > max_w){
-                max_w = num;
-            }
-            if(num < min_w){
-                min_w = num;
-            }
+int k;
+pair<int, int> line[6];
+int width=1;
+int result=0;
+
+void Input(){
+    cin>>k;
+    for(int i=0; i<6; i++){
+        cin>>line[i].first>>line[i].second;
+    }
+}
+
+int Solution(){
+    for (int i=0; i<6; i++){
+        int cur=line[i].second*line[(i+1)%6].second;
+        if(width==1||cur>width){
+            width=cur;
+            result=(width-line[(i+3)%6].second*line[(i+4)%6].second)*k;
         }
     }
-    std::cout << ((max_h*max_w) - (min_h*min_w))*mps << "\n";
+    return result;
+}
 
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    Input();
+    cout<<Solution()<<endl;
     return 0;
 }
