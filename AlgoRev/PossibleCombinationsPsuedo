@@ -1,0 +1,26 @@
+
+// Method 1
+function combination:
+pass in: inputArray, combinationArray, start, end, index, r
+if index is equal to r:
+for each element in combinationArray:
+print each element
+return
+for i = start:
+if i <=end and end -i+1 > r-index:
+combinationArray[index] = inputArray[i]
+call combination function again with updated parameter
+
+// Method 2
+function combination:
+pass in: inputArray, combinationArray, n, r, index, i
+if the index is equal to r:
+for each element in combination array:
+print each element
+if i>=n:
+return
+  combinationArray[index] = inputArray[i]
+  combination(inputArray, combinationArray, n, r, index+1, i+1)
+  combination(inputArray, combinationArray, n, r, index, i+1)
+  
+  
