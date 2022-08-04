@@ -13,26 +13,24 @@ int Euclid_GCD(int x, int y){
     }
 }
 
-int Euclid_LCM(int x, int y){
-    int GCD, LCM;
-    
-    if(x > y){
-        GCD = Euclid_GCD(x,y);
-    }
-    else{
-        GCD = Euclid_GCD(y,x);
-    }
-    
-    LCM = (x*y)/GCD;
-}
 
 int main(){
     int N;
     int x, y;
+    int GCD, LCM;
     scanf("%d", &N);
     for(int i = 0 ; i < N; i++){
         scanf("%d %d", &x, &y);
-        printf("%d\n",Euclid_LCM(x, y));
+        if(x > y){
+            GCD = Euclid_GCD(x,y);
+        }
+        else{
+            GCD = Euclid_GCD(y,x);
+        }
+    
+        LCM = (x*y)/GCD;
+        printf("%d\n",LCM);
+        
     }
     
     return 0;
