@@ -6,9 +6,9 @@ using namespace std;
 vector<int> people;
 vector<int> combination;
 
-void go(int offset, int k) {
+void go(int offset, int k, int a) {
   if (k == 0) {
-    for(int i = 0; i < k; i++){
+    for(int i = 0; i < a; i++){
         cout << combination[i];
     }
     cout << endl;
@@ -16,13 +16,13 @@ void go(int offset, int k) {
   }
   for (int i = offset; i <= people.size() - k; ++i) {
     combination.push_back(people[i]);
-    go(i+1, k-1);
+    go(i+1, k-1, a);
     combination.pop_back();
   }
 }
 
 int main() {
     for (int i = 0; i < 5; ++i) { people.push_back(i+1); }
-    go(0,3);
+    go(0,3, 3);
     return 0;
 }
