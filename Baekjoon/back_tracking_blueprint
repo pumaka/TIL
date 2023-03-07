@@ -1,0 +1,24 @@
+// psuedo code for learning
+
+bool BacktrackingSolution(configuration conf){
+    
+    // Base Case
+    if(no more choices):
+        if(whether conf is goal state)
+	    return true
+	else
+	    return false
+
+    for(all available choices) {
+        // make a choice c
+	Make one chioce and update the Conf
+
+	status = BacktrackingSolve(update conf)
+	if(status is true)
+	    Execute some logics
+	else
+	    Unmake the choice c and revert to old conf
+	}
+    return false
+}
+
