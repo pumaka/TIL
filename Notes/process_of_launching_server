@@ -1,0 +1,18 @@
+The process of launching the server
+
+1. Should have a valid dns server that requests ip address
+
+2. router should be properly set so that the router could direct reqeust to the  given computer in local network.(the incoming signals should be "forwarded" to ports of your local area computers) 
+     1) in case of multiple routers and if you want to avoid complication, setting router to switch(hub) mode could be an option to consider. Things to keep in mind in this case. switched hub could be at 192.168.0.100 
+        a. change the internal ip so that you could access the router even when it is set to switch(hub) mode
+        b. should seize the DHCP server because that is the main difference between router and switch (software wise, in aspect of hardware, logic itself is quite different)
+        c. disable upnp(universal plug and play) because in its essence, it makes the router to ignore all incoming requests. it is quite like dmz in your router settings. it opens all ports so that you could easily detect it. 
+
+
+3. Setting up integrated peripherals in bios 
+    1) Since our goal is to boot up a server that would be running 24/7 turning off itegrated peripherals in the bios would be very important
+
+
+
+
+

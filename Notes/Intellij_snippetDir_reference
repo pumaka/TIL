@@ -1,0 +1,11 @@
+e: $PATH$: Unresolved reference: snippetsDir
+
+due to automatically created config file made by "Spring Rest Docs"
+
+it comes with error message 
+
+Unresolved reference : test
+
+which is resolved when you change the test to tasks.test
+
+val snippetsDir by extra { file("build/generated-snippets") }
