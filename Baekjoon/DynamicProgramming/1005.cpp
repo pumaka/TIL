@@ -1,32 +1,71 @@
 #include <iostream>
-#include <math.h>
 #include <vector>
-#include <queue>
+#include <chrono>
+using namespace std::chrono;
+
+using namespace std;
+
+int mx = 0;
+
+// dfs search
+int search(vector<vector<int>> node, vector<int> time, int target, int sum = 0){
+    sum += time[target];
+    if(node[target].size() == 0){
+        if(mx < sum){
+            mx = sum;
+        }
+        return 0;
+    }
+    int tmp;
+    for(int i = 0; i < node[target].size(); i++){
+        tmp = node[target][i];
+        node[target].erase(node[target].begin());
+        search(node, time, tmp, sum);
+    }
+    return 0;
+}
 
 int main(){
-    int T, N, K, time;
-    vector<int> v;
-    int start, end;
-    vector<int> x;
-    vector<vector<int>> f;
-    int vic;
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cin.tie(0);
+
+    // variable definition
+    int T, N, K, W, from, to, tmp;
+    vector<vector<int>> node;
+    vector<int> v, time;
 
     cin >> T;
-    cin >> N >> K;
-    for(int l = 0; l < T; l++){
-        for(int i =0 ; i < N ; i++){
-            cin >> time;
-            v.push_back(time);
-        }
-        for (int s = 0; s < K; s++){
-            cin >> start >> end;
-            x.push_back(start);
-            x.push_back(end);
-            f.push_back(x);
+    //loop for number of test cases
+    for(int i = 0; i < T; i++) {
+        //auto start = high_resolution_clock::now();
+        cin >> N >> K;
 
-
-            x.clear()
+        for (int l = 0; l < N; l++) {
+            cin >> tmp;
+            time.push_back(tmp);
+            node.push_back(v);
         }
-        cin >> vic;
+
+        for (int l = 0; l < K; l++) {
+            cin >> from >> to;
+            to--;
+            from--;
+            //create node to ensure path
+            node[to].push_back(from);
+        }
+        cin >> W;
+
+        search(node, time, W-1);
+
+        cout << mx << "\n";
+
+        mx = 0;
+        time.clear();
+        node.clear();
+        //auto stop = high_resolution_clock::now();
+        //auto duration = duration_cast<microseconds>(stop - start);
+        //cout << duration.count() << endl;
     }
+    return 0;
 }
