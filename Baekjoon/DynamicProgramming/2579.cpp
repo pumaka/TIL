@@ -1,24 +1,40 @@
-#include <cstdio>
-#define Max(a,b) ((a>b)?a:b)
-int stair_value[301];
-int dp[301];
-int main()
-{
+#include <iostream>
+
+using namespace std;
+
+int arr[301] = {0};
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     int n;
-    scanf("%d", &n);
+    cin >> n;
+    int sum = 0;
 
-    for (int i = 1; i <=n; i++)
-    {
-        scanf("%d", &stair_value[i]);
+    // get inputs
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
 
+    // down-up search
+    sum += arr[n-1];
+    for(int i = n-1; i >= 3; i--){
+        if(arr[i-1] > arr[i-2]){
+            //cout << "1: " << arr[i-1] <<"  |3: " << arr[i-3] << endl;
+            sum += (arr[i-1]+arr[i-3]);
+            i-=2;
+        }
+        else{
+            //cout << "2: " << arr[i-2] << endl;
+            sum += arr[i-2];
+            if((i-2) == 1) sum += arr[0];
+            if((i-2) == 2) sum += (arr[i-3]>arr[i-4])?arr[i-3]:arr[i-4];
+            i--;
+        }
     }
-    dp[0] = 0;
-    dp[1] = stair_value[1];
-    dp[2] = stair_value[1] + stair_value[2];
-    for (int i = 3; i <= n; i++)
-    {
-        dp[i] = stair_value[i] + (Max(dp[i - 3] + stair_value[i-1], dp[i - 2]));
-    }
-    printf("%d", dp[n]);
+
+    cout << sum;
+
     return 0;
 }
