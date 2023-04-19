@@ -1,0 +1,19 @@
+WID : executed "mvn spring-boot:run" command on base path of the project  
+
+Error :  No plugin found for prefix 'spring-boot' in the current project and in the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available from the repositories [local (/home/pumaka/.m2/repository), central (https://repo.maven.apache.org/maven2)] -> [Help 1]
+
+Possible Causes :
+    1. wrong command? //mvn org.springframework.boot:spring-boot-maven-plugin:run worked
+    2. not the right plug-in
+
+Considered Options :
+    1. https://stackoverflow.com/questions/30855864/maven-no-plugin-found-for-prefix-spring-boot-in-the-current-project-and-in-th : 
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+</build>
+        could be added to solve the plugin issue

@@ -7,12 +7,17 @@ The process of launching the server
         a. change the internal ip so that you could access the router even when it is set to switch(hub) mode
         b. should seize the DHCP server because that is the main difference between router and switch (software wise, in aspect of hardware, logic itself is quite different)
         c. disable upnp(universal plug and play) because in its essence, it makes the router to ignore all incoming requests. it is quite like dmz in your router settings. it opens all ports so that you could easily detect it. 
-
+     Resetting router before configuration is quite often the right choice
 
 3. Setting up integrated peripherals in bios 
     1) Since our goal is to boot up a server that would be running 24/7 turning off itegrated peripherals in the bios would be very important
 
-
-
-
-
+4. SSL certification is more than necessary
+    1) https://inpa.tistory.com/entry/TOMCAT-%E2%9A%99%EF%B8%8F-SSL-%EC%84%A4%EC%A0%95-https is quite helpful   
+    2) https://heodolf.tistory.com/94
+    3) https://docs.oracle.com/cd/E35976_01/server.740/es_admin/src/tadm_ssl_convert_pem_to_jks.html
+    4) https://www.ibm.com/docs/en/license-metric-tool?topic=certificate-step-1-creating-private-keys-certificates
+    5) https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains-prerequisites.html
+    6) Using Let's Encrypy SSL https://computingforgeeks.com/easiest-way-install-letsencrypt-linux/  
+          startup tomcat and do the following(to ensure webroot)
+    7) https://trend21c.tistory.com/2172
